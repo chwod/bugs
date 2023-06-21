@@ -7,7 +7,9 @@ public class Test {
 
 	private static <T> List<T> get(Object o) {
 		var list = new ArrayList<T>();
-		list.add((T) o);
+		list.add(
+				(T) o
+				);
 		return list;
 	}
 
@@ -15,7 +17,10 @@ public class Test {
 		var a = Arrays.asList("v");
 		List<String> b = Test.<String>get(a);
 		System.out.println(b);
-		var c = b.parallelStream().map(d -> d).collect(Collectors.toList());
+		var c = b.parallelStream()
+				.map(d -> d)
+				.collect(
+						Collectors.toList());
 		System.out.println(c);
 	}
 
